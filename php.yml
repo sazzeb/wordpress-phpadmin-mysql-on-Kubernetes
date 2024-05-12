@@ -21,7 +21,7 @@ spec:
           - name: PMA_PORT
             value: "3306"
           - name: PMA_USER
-            value: root
+            value: worddbpass
           - name: PMA_PASSWORD
             value: worddbpass
         ports:
