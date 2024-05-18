@@ -17,13 +17,25 @@ spec:
         image: mysql:latest
         env:
           - name: MYSQL_ROOT_PASSWORD
-            value:  worddbpass
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: MYSQL_ROOT_PASSWORD
           - name: MYSQL_DATABASE
-            value: wordpress
+            valueFrom:
+              configMapKeyRef:
+                name: mysql-config
+                key: MYSQL_DATABASE
           - name: MYSQL_USER
-            value: worddbpass
+            valueFrom:
+              configMapKeyRef:
+                name: mysql-config
+                key: MYSQL_USER
           - name: MYSQL_PASSWORD
-            value: worddbpass
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: MYSQL_PASSWORD
         ports:
           - containerPort: 3306
         volumeMounts:

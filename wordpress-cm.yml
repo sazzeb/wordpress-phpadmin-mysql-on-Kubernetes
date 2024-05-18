@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-config
+  labels:
+    app: wordpress
+data:
+  WORDPRESS_DB_HOST: mysql.default.svc.cluster.local
+  WORDPRESS_DB_NAME: wordpress
+  WORDPRESS_DB_USER: worddbpass
+

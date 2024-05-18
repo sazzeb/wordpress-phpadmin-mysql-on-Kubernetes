@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: phpadmin-config
+  labels:
+    app: phpadmin
+data:
+  PMA_HOST: mysql.default.svc.cluster.local
+  PMA_PORT: "3306"
+  PMA_USER: worddbpass
+
